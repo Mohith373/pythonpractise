@@ -714,12 +714,225 @@ sort()	Sorts the list
 """
 #ENDING OF THE LSITS
 #STARTING OF TUPLES
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
 
+thistuple = ("apple", "banana", "cherry", "apple", "cherry")
+print(thistuple) #allows duplicate values
 
+thistuple = ("apple", "banana", "cherry")
+print(len(thistuple))
 
+#One item tuple, remember the comma:
+thistuple = ("apple",)
+print(type(thistuple))
+#NOT a tuple
+thistuple = ("apple")
+print(type(thistuple))
 
+tuple1 = ("apple", "banana", "cherry")
+tuple2 = (1, 5, 7, 9, 3)
+tuple3 = (True, False, False)
 
+tuple1 = ("abc", 34, True, 40, "male")
 
+mytuple = ("apple", "banana", "cherry")
+print(type(mytuple))
+
+thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
+print(thistuple)
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[1])
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[-1])
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[2:5])
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[:4])
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[2:])
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[-4:-1])
+
+thistuple = ("apple", "banana", "cherry")
+if "apple" in thistuple:
+  print("Yes, 'apple' is in the fruits tuple")
+
+x = ("apple", "banana", "cherry") #workaround the list to change 
+y = list(x)
+y[1] = "kiwi"
+x = tuple(y)
+print(x)
+
+#adding items into the tuple,tuples are immutable
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.append("orange")
+thistuple = tuple(y)
+
+#adding tuple to a tuple
+thistuple = ("apple", "banana", "cherry")
+y = ("orange",)
+thistuple += y
+print(thistuple)
+
+#removing element in tuple using conversion of tuple to list
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.remove("apple")
+thistuple = tuple(y)
+
+thistuple = ("apple", "banana", "cherry")
+del thistuple
+print(thistuple) #this will raise an error because the tuple no longer exists
+
+#unpacking tuples,same as unpackinng lists
+fruits = ("apple", "banana", "cherry")
+(green, yellow, red) = fruits
+print(green)
+print(yellow)
+print(red)
+
+#Assign the rest of the values as a list called "red":
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+(green, yellow, *red) = fruits
+print(green)
+print(yellow)
+print(red)
+
+fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
+(green, *tropic, red) = fruits
+print(green)
+print(tropic)
+print(red)
+
+#looping in tuples
+thistuple = ("apple", "banana", "cherry")
+for x in thistuple:
+  print(x)
+    
+#looping through index numbers
+thistuple = ("apple", "banana", "cherry")
+for i in range(len(thistuple)):
+
+thistuple = ("apple", "banana", "cherry")
+i = 0
+while i < len(thistuple):
+  print(thistuple[i])
+  i = i + 1
+  print(thistuple[i])
+
+#joining two tples
+tuple1 = ("a", "b" , "c")
+tuple2 = (1, 2, 3)
+tuple3 = tuple1 + tuple2
+print(tuple3)
+
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+print(mytuple)
+
+#Tuple Methods
+#Python has two built-in methods that you can use on tuples.
+#Method	Description
+#count()	Returns the number of times a specified value occurs in a tuple
+#index()	Searches the tuple for a specified value and returns the position of where it was found
+#ENDING OF TUPLES
+
+#STARTING OF SETS TYPES-->unchangable,duplicates not allowed,you can remove and add items
+thisset = {"apple", "banana", "cherry"}
+print(thisset)
+
+#duplicates ignored same as in java colllection frameworkss
+thisset = {"apple", "banana", "cherry", "apple"}
+print(thisset)
+
+   # True and 1 is considered the same value:
+thisset = {"apple", "banana", "cherry", True, 1, 2}
+print(thisset)
+#False and 0 is considered the same value:
+thisset = {"apple", "banana", "cherry", False, True, 0}
+print(thisset)
+
+thisset = {"apple", "banana", "cherry"} #get the length of a set
+print(len(thisset))
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {1, 5, 7, 9, 3}
+set3 = {True, False, False}
+
+set1 = {"abc", 34, True, 40, "male"}#a set contains of different data types
+
+myset = {"apple", "banana", "cherry"}
+print(type(myset))
+
+thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
+print(thisset)
+
+#Loop through the set, and print the values:
+thisset = {"apple", "banana", "cherry"}
+for x in thisset:
+  print(x)
+
+#Check if "banana" is present in the set:
+thisset = {"apple", "banana", "cherry"}
+print("banana" in thisset)
+
+thisset = {"apple", "banana", "cherry"}
+print("banana" not in thisset)
+
+#Once a set is created, you cannot change its items, but you can add new items.
+thisset = {"apple", "banana", "cherry"}
+thisset.add("orange")
+print(thisset)
+
+#adding two sets
+thisset = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango", "papaya"}
+thisset.update(tropical)
+print(thisset)
+
+#Add Any Iterable
+#The object in the update() method does not have to be a set, it can be any iterable object (tuples, lists, dictionaries etc.)
+#Add elements of a list to at set:
+thisset = {"apple", "banana", "cherry"}
+mylist = ["kiwi", "orange"]
+thisset.update(mylist)
+print(thisset)
+
+#removing items using remove and discard methods in any set
+thisset = {"apple", "banana", "cherry"}
+thisset.remove("banana")
+print(thisset)
+#Note: If the item to remove does not exist, remove() will raise an error.
+thisset = {"apple", "banana", "cherry"}
+thisset.discard("banana")
+print(thisset)
+#Note: If the item to remove does not exist, discard() will NOT raise an error.
+
+#removes a random element in the set if you use pop function
+thisset = {"apple", "banana", "cherry"}
+x = thisset.pop()
+print(x)
+print(thisset)
+
+#The clear() method empties the set:
+thisset = {"apple", "banana", "cherry"}
+thisset.clear()
+print(thisset)
+
+#The del keyword will delete the set completely:
+thisset = {"apple", "banana", "cherry"}
+del thisset
+print(thisset)
+
+#loop sets
 
 
 
