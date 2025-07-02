@@ -933,12 +933,469 @@ del thisset
 print(thisset)
 
 #loop sets
+thisset = {"apple", "banana", "cherry"}
+for x in thisset:
+  print(x)
 
+"""
+Join Sets
+There are several ways to join two or more sets in Python.
 
+The union() and update() methods joins all items from both sets.
 
+The intersection() method keeps ONLY the duplicates.
 
+The difference() method keeps the items from the first set that are not in the other set(s).
 
+The symmetric_difference() method keeps all items EXCEPT the duplicates.
+"""
 
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = set1.union(set2)
+print(set3)
 
+#You can use the | operator instead of the union() method, and you will get the same result.
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = set1 | set2
+print(set3)
 
+#Join Multiple Sets
+#All the joining methods and operators can be used to join multiple sets.
+#When using a method, just add more sets in the parentheses, separated by commas:
+#Example
+#Join multiple sets with the union() method:
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = {"John", "Elena"}
+set4 = {"apple", "bananas", "cherry"}
+myset = set1.union(set2, set3, set4)
+print(myset)
+
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = {"John", "Elena"}
+set4 = {"apple", "bananas", "cherry"}
+myset = set1 | set2 | set3 |set4
+print(myset)
+
+#The union() method allows you to join a set with other data types, like lists or tuples
+x = {"a", "b", "c"}
+y = (1, 2, 3)
+z = x.union(y)
+print(z)
+
+#Note: The  | operator only allows you to join sets with sets, and not with other data types like you can with the  union() method.
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+set1.update(set2)
+print(set1)
+#Note: Both union() and update() will exclude any duplicate items.
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1.intersection(set2)
+print(set3)
+#you can use the & operator instead of the intersection() method, and you will get the same result.
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1 & set2
+print(set3)
+
+#Note: The & operator only allows you to join sets with sets, and not with other data types like you can with the intersection() method.
+#The intersection_update() method will also keep ONLY the duplicates, but it will change the original set instead of returning a new set.
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set1.intersection_update(set2)
+print(set1)
+
+set1 = {"apple", 1,  "banana", 0, "cherry"}
+set2 = {False, "google", 1, "apple", 2, True}
+set3 = set1.intersection(set2)
+print(set3)
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1.difference(set2)
+print(set3)
+#You can use the - operator instead of the difference() method, and you will get the same result.
+#Use - to join two sets:
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1 - set2
+print(set3)
+
+#Note: The - operator only allows you to join sets with sets, and not with other data types like you can with the difference() method.
+#The difference_update() method will also keep the items from the first set that are not in the other set, but it will change the original set instead of returning a new set.
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set1.difference_update(set2)
+print(set1)
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1.symmetric_difference(set2)
+print(set3)
+
+#You can use the ^ operator instead of the symmetric_difference() method, and you will get the same result.
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1 ^ set2
+print(set3)
+
+#Note: The ^ operator only allows you to join sets with sets, and not with other data types like you can with the symmetric_difference() method.
+#The symmetric_difference_update() method will also keep all but the duplicates, but it will change the original set instead of returning a new set.
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set1.symmetric_difference_update(set2)
+print(set1)
+
+"""
+Set Methods
+Python has a set of built-in methods that you can use on sets.
+add()	 	            Adds an element to the set
+clear()	 	            Removes all the elements from the set
+copy()	 	            Returns a copy of the set
+difference()	-	    Returns a set containing the difference between two or more sets
+difference_update()	-=	Removes the items in this set that are also included in another, specified set
+discard()	 	        Remove the specified item
+intersection()	&	    Returns a set, that is the intersection of two other sets
+intersection_update()	&=	Removes the items in this set that are not present in other, specified set(s)
+isdisjoint()	 	    Returns whether two sets have a intersection or not
+issubset()	<=	        Returns whether another set contains this set or not
+ 	        <	Returns whether all items in this set is present in other, specified set(s)
+issuperset()	>=	Returns whether this set contains another set or not
+             	>	Returns whether all items in other, specified set(s) is present in this set
+pop()	         	Removes an element from the set
+remove()	     	Removes the specified element
+symmetric_difference()	^	Returns a set with the symmetric differences of two sets
+symmetric_difference_update()	^=	Inserts the symmetric differences from this set and another
+union()	|	Return a set containing the union of sets
+update()	|=	Update the set with the union of this set and others
+"""
+#ENDING OF SETS
+#STARTING OF DICTIONARIES
+#Dictionaries are used to store data values in key:value pairs.
+#A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])
+
+"""
+Ordered or Unordered?
+As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
+
+When we say that dictionaries are ordered, it means that the items have a defined order, and that order will not change.
+
+Unordered means that the items do not have a defined order, you cannot refer to an item by using an index.
+"""
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(thisdict) #overwrite existing values
+
+print(len(thisdict))
+
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(type(thisdict))
+
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict["model"]
+#or you can simply call get() method
+x = thisdict.get("model")
+#Get a list of the keys:
+x = thisdict.keys()
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+
+x = car.keys()
+print(x) #before the change
+car["color"] = "white"
+print(x) #after the change
+
+Get a list of the values:
+x = thisdict.values()
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.values()
+print(x) #before the change
+car["year"] = 2020
+print(x) #after the change
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.values()
+print(x) #before the change
+car["color"] = "red"
+print(x) #after the change
+
+#The items() method will return each item in a dictionary, as tuples in a list.
+x = thisdict.items()
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.items()
+print(x) #before the change
+car["year"] = 2020
+print(x) #after the change
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.items()
+print(x) #before the change
+car["color"] = "red"
+print(x) #after the change
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+if "model" in thisdict:
+  print("Yes, 'model' is one of the keys in the thisdict dictionary")
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2018
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"year": 2020})
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["color"] = "red"
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"color": "red"})
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.popitem()
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict["model"]
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict
+print(thisdict) #this will cause an error because "thisdict" no longer exists.
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.clear()
+print(thisdict)
+
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x in thisdict:
+  print(x)
+
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x in thisdict:
+  print(thisdict[x])
+
+for x in thisdict.values():
+  print(x)
+for x in thisdict.keys():
+  print(x)
+for x, y in thisdict.items():
+  print(x, y)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = thisdict.copy()
+print(mydict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = dict(thisdict)
+print(mydict)
+
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+print(myfamily)
+
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+print(myfamily)
+
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+print(myfamily["child2"]["name"])
+
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+
+for x, obj in myfamily.items():
+    print(x)
+    for y in obj:
+        print(y + ':', obj[y])
+        """
+Dictionary Methods
+Python has a set of built-in methods that you can use on dictionaries.
+
+Method	Description
+clear()	Removes all the elements from the dictionary
+copy()	Returns a copy of the dictionary
+fromkeys()	Returns a dictionary with the specified keys and value
+get()	Returns the value of the specified key
+items()	Returns a list containing a tuple for each key value pair
+keys()	Returns a list containing the dictionary's keys
+pop()	Removes the element with the specified key
+popitem()	Removes the last inserted key-value pair
+setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()	Updates the dictionary with the specified key-value pairs
+values()	Returns a list of all the values in the dictionary"""
 
